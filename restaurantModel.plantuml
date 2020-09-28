@@ -1,0 +1,38 @@
+@startuml
+
+class Restaurant{
+    name STRING
+    imageURL STRING
+    people ARRAY <people>
+    menus ARRAY <menu>
+    sellsFood()
+}
+class People {
+    role STRING
+    action STRING
+}
+
+class Menu {
+    title STRING
+    items ARRAY <item>
+    listItems()
+}
+class Items {
+    name STRING
+    type STRING
+    price FLOAT
+}
+class Price {
+    amount FLOAT
+    currency STRING
+}
+
+Restaurant --> Menu : "has a menu"
+Restaurant --> People : "has many"
+People *.. Staff : "is composed of few"
+People --> Customers : "has many"
+Customers --> Menu : "select item"
+Menu *.. Items : "is composed of many items"
+Staff --> Menu : "serve food"
+Items --> Price: "costs"
+@enduml
