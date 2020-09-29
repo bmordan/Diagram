@@ -1,4 +1,4 @@
-const {Restaurant} = require("./restaurantModel")
+const {Restaurant, Menu} = require("./restaurantModel")
 
 describe("Restaurant", () => {
     test ("has a name", ()=> {
@@ -11,7 +11,7 @@ test('Must have a name', () => {
 })
 describe ("Menu", () => {
     test ("has a type and items", () => {
-        const Menu = new Menu({type: "Wine Menu"})
+        const menu = new Menu({type: "Wine Menu"})
         expect(menu.type).toBe("Wine Menu")
         expect(Array.isArray(menu.items)).toBeTruthy()
     })
