@@ -9,3 +9,10 @@ test('Must have a name', () => {
     expect(() =>{new Restaurant({})}).toThrow()
 })
 })
+describe ("Menu", () => {
+    test ("has a type and items", () => {
+        const Menu = new Menu({type: "Wine Menu"})
+        expect(menu.type).toBe("Wine Menu")
+        expect(Array.isArray(menu.items)).toBeTruthy()
+    })
+})

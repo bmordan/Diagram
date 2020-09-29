@@ -5,10 +5,12 @@ class Restaurant {
     }
 
 }
-class Menu {}
-class Items{}
-class People{}
-class Price{}
+class Menu {
+    constructor({type}){
+        this.type = type
+        this.items = []
+    }
+}
 
 module.exports = {
     Restaurant,
